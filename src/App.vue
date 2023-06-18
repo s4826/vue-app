@@ -1,26 +1,80 @@
+/**
+ Main App component
+ */
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="app-wrapper" :class="{ smallDisplay: smallDisplay, 'flex-row': flexRow, 'flex-column': flexColumn }">
+        <NavBar />
+        <div class="router-wrapper">
+            <router-view />
+        </div>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavBar from "./components/NavBar.vue"
+import { windowSize } from "./WindowSize.js"
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: "App",
+    components: {
+        NavBar
+    },
+    data() {
+        return {
+            flexDirection: "",
+            smallDisplay: false 
+        }
+    },
+    methods: {
+        handleFlexChangeOnResize() {
+            if (windowSize() === "small") {
+                this.flexDirection = "";
+                this.smallDisplay = true;
+            } else if (windowSize() === "medium") {
+                this.flexDirection = "flex-column";
+                this.smallDisplay = false;
+            } else {
+                this.flexDirection = "flex-row";
+                this.smallDisplay = false;
+            }
+        }
+    },
+    computed: {
+        flexRow: function() {
+            return this.flexDirection === "flex-row";
+        },
+        flexColumn: function() {
+            return this.flexDirection === "flex-column";
+        }
+    },
+    created() {
+        this.handleFlexChangeOnResize();
+    },
+    mounted() {
+        window.addEventListener("resize", this.handleFlexChangeOnResize);
+    },
+    unmounted() {
+        window.removeEventListener("resize", this.handleFlexChangeOnResize);
+    }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+    .app-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex-row {
+        flex-direction: row;
+    }
+
+    .flex-column {
+        flex-direction: column;
+    }
+
+    .router-wrapper {
+        padding: 20px;
+        flex-grow: 2;
+    }
 </style>

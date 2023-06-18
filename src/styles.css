@@ -1,0 +1,15 @@
+/**
+ * Global styles
+ */
+:root {
+   --nav-color: #c9b3ff;
+   --nav-current-color: #7f4dff;
+   --nav-select-color: #a480ff;
+   --max-nav-width: 150px;
+   --max-nav-height: 5vh;
+   --nav-padding: 10px;
+}
+
+body {
+   margin: 0;
+}
