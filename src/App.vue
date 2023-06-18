@@ -4,9 +4,7 @@
 <template>
     <div class="app-wrapper" :class="{ smallDisplay: smallDisplay, 'flex-row': flexRow, 'flex-column': flexColumn }">
         <NavBar />
-        <div class="router-wrapper">
-            <router-view />
-        </div>
+        <router-view />
     </div>
 </template>
 
@@ -63,6 +61,7 @@ export default {
     .app-wrapper {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     .flex-row {
@@ -71,10 +70,5 @@ export default {
 
     .flex-column {
         flex-direction: column;
-    }
-
-    .router-wrapper {
-        padding: 20px;
-        flex-grow: 2;
     }
 </style>
