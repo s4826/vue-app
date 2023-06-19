@@ -36,4 +36,7 @@ export default {
         margin-right: 10px;
         max-width: 33%;
     }
+    .about-wrapper {
+        padding: var(--router-view-padding); 
+    }
 </style>

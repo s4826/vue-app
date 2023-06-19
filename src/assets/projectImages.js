@@ -21,3 +21,21 @@ export const project2 = [
         "alt": "Text twist gameplay screenshot"
     }
 ]
+
+export const project3 = [
+    {
+        "id": 0,
+        "src": "site1.png",
+        "alt": "Picture of this website"
+    },
+    {
+        "id": 1,
+        "src": "site2.png",
+        "alt": "Another picture of this site"
+    },
+    {
+        "id": 2,
+        "src": "site3.png",
+        "alt": "A third picture of this site"
+    }
+]

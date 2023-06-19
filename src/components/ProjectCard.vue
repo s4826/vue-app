@@ -2,11 +2,11 @@
 Display a project as a component
  */
 <template>
-    <div class="project-wrapper">
+    <div class="card-wrapper">
         <h2>{{ projectName }}</h2> 
         <p><a :href="projectLink">{{ linkText }}</a></p>
         <p><slot></slot></p>
-        <ImageViewer images="images"/>
+        <ImageViewer :images="images" :projectId="projectId"/>
     </div>
 </template>
 
@@ -17,17 +17,13 @@ export default {
     components: {
         ImageViewer
     },
-    props: ["projectName", "projectLink", "linkText",  "images"]
+    props: ["projectName", "projectLink", "linkText", "projectId", "images"]
 }
 </script>
 
 <style scoped>
-    .project-wrapper {
+    .card-wrapper {
         padding: 10px;
         display: block;
-    }
-
-    img {
-        max-width: 100%;
     }
 </style>

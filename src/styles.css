@@ -8,6 +8,7 @@
    --max-nav-width: 150px;
    --max-nav-height: 5vh;
    --nav-padding: 10px;
+   --router-view-padding: 20px;
 }
 
 body {

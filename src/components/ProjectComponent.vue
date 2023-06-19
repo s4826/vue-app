@@ -2,7 +2,7 @@
   Parent component to hold all ProjectCard components.
  */
 <template>
-    <div class="wrapper">
+    <div class="project-wrapper">
         <ProjectCard class="project"
             projectName="MBTA Bustracker"
             projectLink="https://www.mbtabustrackerapp.com"
@@ -20,12 +20,19 @@
         >
             A clone of the word game Text Twist, written in pure Python.
         </ProjectCard>
+        <ProjectCard class="project"
+            projectName="This website!"
+            :images="project3"
+        >
+            This site was a final project for a front-end web development course at Boston University.
+            It uses Vue, Javascript, CSS, and HTML. 
+        </ProjectCard>
     </div>
 </template>
 
 <script>
 import ProjectCard from "./ProjectCard.vue"
-import { project1, project2 } from "./assets/projectImages.js"
+import { project1, project2, project3 } from "../assets/projectImages.js"
 
 export default {
     name: "ProjectComponent",
@@ -35,19 +42,25 @@ export default {
     data() {
         return {
             project1,
-            project2
+            project2,
+            project3
         }
     }
 }
 </script>
 
-<style>
-    .wrapper {
+<style scoped>
+    .project-wrapper {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        padding: var(--router-view-padding);
+        flex-grow: 1;
+        gap: 5px;
     }
+
     .project {
-        width: 50%;
-        max-width: 600px;
+        max-width: 45%;
+        min-width: 35%;
     }
 </style>

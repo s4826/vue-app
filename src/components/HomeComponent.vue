@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <div class="home-wrapper">
         <img id="headshot" :src="headshot" alt="A black and white headshot of myself">
         <h1>Welcome! I'm Sean</h1>
         <p>
@@ -9,19 +9,17 @@
         <ul>
             <li>
                 <a href="https://missing.csail.mit.edu">The Missing Semester</a>
+                <br/>
                 <iframe class="video" src="https://www.youtube.com/embed/Z56Jmr9Z34Q" allowfullscreen></iframe>
-                <p class="print">https://missing.csail.mit.edu</p>
             </li>
             <li>
                 <a href="https://learnvimscriptthehardway.stevelosh.com">Learn Vimscript The Hard Way</a>
-                <p class="print">https://learnvimscriptthehardway.stevelosh.com</p>
             </li>
             <li>
                 <a href="https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world">The Flask Mega-Tutorial</a>
-                <p class="print">https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world</p>
             </li>
         </ul>
-    </main>
+    </div>
 </template>
 
 <script>
@@ -38,5 +36,9 @@ export default {
     img {
         width: 33%;
         max-width: 200px; 
+    }
+
+    .home-wrapper {
+        padding: var(--router-view-padding);
     }
 </style>

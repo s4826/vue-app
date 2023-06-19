@@ -16,7 +16,7 @@ export default {
     props: ["images"],
     data() {
         return {
-            idx: 0,
+            idx: 0
         }
     },
     methods: {
@@ -30,24 +30,23 @@ export default {
 <style scoped>
     .image-wrapper {
         position: relative;
-        height: 100%;
         text-align: center;
+        max-width: 100%;
+        flex-grow: 8;
+        min-height: 400px;
     }
 
-    img {
+    .image {
         position: absolute;
         top: 0px;
         left: 0px;
         margin: auto;
-    }
-
-    button {
-        position: fixed;
-        bottom: 0px;
-    }
-
-    .image {
+        max-width: 100%;
         transition: opacity 1s ease-out 0s;
+    }
+
+    .back, .forward {
+        width: min-content;
     }
 
     .fade-in {

@@ -6,7 +6,7 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 import App from './App.vue'
-import AppTwo from './AppTwo.vue'
+//import AppTwo from './AppTwo.vue'
 import HomeComponent from './components/HomeComponent.vue'
 import AboutComponent from './components/AboutComponent.vue'
 import ProjectComponent from './components/ProjectComponent.vue'
@@ -24,6 +24,6 @@ const router = createRouter({
     ]
 });
 
-// createApp(App).use(router).mount('#app')
-createApp(AppTwo).mount('#app')
+createApp(App).use(router).mount('#app')
+//createApp(AppTwo).mount('#app')
 /* eslint-disable */
