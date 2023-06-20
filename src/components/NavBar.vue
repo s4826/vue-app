@@ -121,6 +121,7 @@ export default {
         width: 100vw;
         flex-direction: row;
         border-bottom: solid thin;
+        position: fixed;
     }
 
     .left {
@@ -128,6 +129,7 @@ export default {
         height: 100vh;
         flex-direction: column;
         border-right: solid thin;
+        position: fixed;
     }
 
     .offScreenRight {

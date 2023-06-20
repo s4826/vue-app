@@ -4,7 +4,7 @@
 <template>
     <div class="app-wrapper" :class="{ smallDisplay: smallDisplay, 'flex-row': flexRow, 'flex-column': flexColumn }">
         <NavBar />
-        <router-view />
+        <router-view :class="margin"/>
     </div>
 </template>
 
@@ -20,28 +20,31 @@ export default {
     data() {
         return {
             flexDirection: "",
-            smallDisplay: false 
+            smallDisplay: false,
+            margin: ""
         }
     },
     methods: {
         handleFlexChangeOnResize() {
+            this.margin = "margin-top"
+            this.flexDirection = "flex-column";
+
             if (windowSize() === "small") {
-                this.flexDirection = "";
                 this.smallDisplay = true;
             } else if (windowSize() === "medium") {
-                this.flexDirection = "flex-column";
                 this.smallDisplay = false;
             } else {
                 this.flexDirection = "flex-row";
                 this.smallDisplay = false;
+                this.margin = "margin-left"
             }
         }
     },
     computed: {
-        flexRow: function() {
+        flexRow() {
             return this.flexDirection === "flex-row";
         },
-        flexColumn: function() {
+        flexColumn() {
             return this.flexDirection === "flex-column";
         }
     },
@@ -62,6 +65,14 @@ export default {
         display: flex;
         flex-direction: column;
         width: 100%;
+    }
+    
+    .margin-left {
+        margin-left: var(--max-nav-width);
+    }
+
+    .margin-top {
+        margin-top: calc(var(--max-nav-height) + 10px);
     }
 
     .flex-row {
