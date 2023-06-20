@@ -25,5 +25,8 @@ export default {
     .card-wrapper {
         padding: 10px;
         display: block;
+        min-width: 250px;
+        max-width: 400px;
+        width: 40%;
     }
 </style>

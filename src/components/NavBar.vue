@@ -118,7 +118,7 @@ export default {
 
     .top {
         max-height: var(--max-nav-height);
-        max-width: 100vw;
+        width: 100vw;
         flex-direction: row;
         border-bottom: solid thin;
     }
@@ -143,6 +143,10 @@ export default {
 
     .flex-end {
         justify-content: flex-end;
+    }
+
+    #hamburger-icon {
+        margin-right: 20px;
     }
 
     #hamburger-icon:hover {

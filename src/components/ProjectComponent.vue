@@ -56,11 +56,6 @@ export default {
         flex-wrap: wrap;
         padding: var(--router-view-padding);
         flex-grow: 1;
-        gap: 5px;
-    }
-
-    .project {
-        max-width: 45%;
-        min-width: 35%;
+        gap: 15px;
     }
 </style>
