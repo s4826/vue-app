@@ -29,7 +29,7 @@
 
 <script>
 import emailjs from "@emailjs/browser";
-emailjs.init(process.env.EMAIL_JS_API_KEY);
+emailjs.init("7Wiau0CVk3hy9KDWc");
 
 export default {
     name: "ContactForm",
